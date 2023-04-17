@@ -1,8 +1,9 @@
 CREATE DATABASE CCS;
 USE CCS;
+GO;
 
 CREATE TABLE estacionamento(
-	id_estacionamento INT PRIMARY KEY AUTO_INCREMENT,
+	id_estacionamento INT PRIMARY KEY IDENTITY(1,1),
 	nome_estacionamento VARCHAR(255) NOT NULL,
 	cep CHAR(8) NOT NULL,
 	numero_endereco VARCHAR(255) NOT NULL,
@@ -10,7 +11,7 @@ CREATE TABLE estacionamento(
 );
 
 CREATE TABLE valor_estacionamento(
-	id_preco INT PRIMARY KEY AUTO_INCREMENT,
+	id_preco INT PRIMARY KEY IDENTITY(1,1),
     fk_estacionamento INT NOT NULL,
     FOREIGN KEY (fk_estacionamento) REFERENCES estacionamento(id_estacionamento),
     primeira_hora DECIMAL(5,2) NOT NULL,
@@ -19,7 +20,7 @@ CREATE TABLE valor_estacionamento(
 );
 
 CREATE TABLE funcionario(
-	id_funcionario INT PRIMARY KEY AUTO_INCREMENT,
+	id_funcionario INT PRIMARY KEY IDENTITY(1,1),
 	fk_estacionamento INT NOT NULL,
     FOREIGN KEY (fk_estacionamento) REFERENCES estacionamento(id_estacionamento),
 	nome_funcionario VARCHAR(255) NOT NULL,
@@ -34,7 +35,7 @@ CREATE TABLE funcionario(
 );
 
 CREATE TABLE vaga(
-	id_vaga INT PRIMARY KEY AUTO_INCREMENT,
+	id_vaga INT PRIMARY KEY IDENTITY(1,1),
 	fk_estacionamento INT NOT NULL,
     FOREIGN KEY (fk_estacionamento) REFERENCES estacionamento(id_estacionamento),
     numero INT NOT NULL,
@@ -42,7 +43,7 @@ CREATE TABLE vaga(
 );
 
 CREATE TABLE checkin_veiculo(
-	id_checkin INT PRIMARY KEY AUTO_INCREMENT,
+	id_checkin INT PRIMARY KEY IDENTITY(1,1),
 	fk_vaga INT NOT NULL,
     FOREIGN KEY (fk_vaga) REFERENCES vaga(id_vaga),
     placa CHAR(7) NOT NULL,
@@ -52,7 +53,7 @@ CREATE TABLE checkin_veiculo(
 );
 
 CREATE TABLE historico(
-	id_historico INT PRIMARY KEY AUTO_INCREMENT,
+	id_historico INT PRIMARY KEY IDENTITY(1,1),
 	fk_vaga INT NOT NULL,
     FOREIGN KEY (fk_vaga) REFERENCES vaga(id_vaga),
 	fk_veiculo INT NOT NULL,
