@@ -61,7 +61,6 @@ CREATE TABLE historico(
     FOREIGN KEY (fk_veiculo) REFERENCES checkin_veiculo(id_checkin),
 	momento_registro DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL,
 	status_registro VARCHAR(255) NOT NULL,
-    CHECK (status_registro = "Checkin" OR status_registro = "Checkout"),
     valor_pago DECIMAL(5,2)
 );
 
