@@ -7,7 +7,7 @@ CREATE TABLE estacionamento(
 	nome_estacionamento VARCHAR(255) NOT NULL,
 	cep CHAR(8) NOT NULL,
 	numero_endereco VARCHAR(255) NOT NULL,
-	telefone CHAR(11) NOT NULL
+	telefone CHAR(11) UNIQUE NOT NULL
 );
 
 CREATE TABLE valor_estacionamento(
@@ -25,11 +25,11 @@ CREATE TABLE funcionario(
     FOREIGN KEY (fk_estacionamento) REFERENCES estacionamento(id_estacionamento),
 	nome_funcionario VARCHAR(255) NOT NULL,
     foto IMAGE,
-	email VARCHAR(255) NOT NULL,
-	rg CHAR(9) NOT NULL,
-	cpf CHAR(11) NOT NULL,
+	email VARCHAR(255) UNIQUE NOT NULL,
+	rg CHAR(9) UNIQUE NOT NULL,
+	cpf CHAR(11) UNIQUE NOT NULL,
 	senha VARCHAR(255) NOT NULL,
-	telefone CHAR(11) NULL,
+	telefone CHAR(11) UNIQUE NULL,
 	login_habilitado BINARY(1) NOT NULL,
 	usuario_adm BINARY(1) NOT NULL
 );
@@ -46,10 +46,10 @@ CREATE TABLE checkin_veiculo(
 	id_checkin INT PRIMARY KEY IDENTITY(1,1),
 	fk_vaga INT NOT NULL,
     FOREIGN KEY (fk_vaga) REFERENCES vaga(id_vaga),
-    placa CHAR(7) NOT NULL,
+    placa CHAR(7) UNIQUE NOT NULL,
 	modelo VARCHAR(255) NOT NULL,
 	nome_cliente VARCHAR(255) NOT NULL,
-	telefone_cliente CHAR(11) NOT NULL
+	telefone_cliente CHAR(11) UNIQUE NOT NULL
 );
 
 CREATE TABLE historico(
