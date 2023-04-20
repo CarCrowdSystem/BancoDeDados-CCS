@@ -5,6 +5,7 @@ GO;
 CREATE TABLE estacionamento(
 	id_estacionamento INT PRIMARY KEY IDENTITY(1,1),
 	nome_estacionamento VARCHAR(255) NOT NULL,
+	cnpj CHAR(14) NOT NULL,
 	cep CHAR(8) NOT NULL,
 	numero_endereco VARCHAR(255) NOT NULL,
 	telefone CHAR(11) UNIQUE NOT NULL
