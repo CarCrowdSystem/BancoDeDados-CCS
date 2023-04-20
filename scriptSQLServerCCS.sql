@@ -24,7 +24,7 @@ CREATE TABLE funcionario(
 	fk_estacionamento INT NOT NULL,
     FOREIGN KEY (fk_estacionamento) REFERENCES estacionamento(id_estacionamento),
 	nome_funcionario VARCHAR(255) NOT NULL,
-    foto BLOB,
+    foto IMAGE,
 	email VARCHAR(255) NOT NULL,
 	rg CHAR(9) NOT NULL,
 	cpf CHAR(11) NOT NULL,
