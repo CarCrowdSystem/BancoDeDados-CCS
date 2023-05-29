@@ -45,8 +45,6 @@ CREATE TABLE vaga(
 
 CREATE TABLE checkin_veiculo(
 	id_checkin INT PRIMARY KEY IDENTITY(1,1),
-	fk_vaga INT NOT NULL,
-    FOREIGN KEY (fk_vaga) REFERENCES vaga(id_vaga),
     placa CHAR(7) UNIQUE NOT NULL,
 	modelo VARCHAR(255) NOT NULL,
 	nome_cliente VARCHAR(255) NOT NULL,
