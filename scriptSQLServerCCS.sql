@@ -8,7 +8,8 @@ CREATE TABLE estacionamento(
 	cnpj CHAR(14) NOT NULL,
 	cep CHAR(8) NOT NULL,
 	numero_endereco VARCHAR(255) NOT NULL,
-	telefone CHAR(11) UNIQUE NOT NULL
+	telefone CHAR(11) UNIQUE NOT NULL, 
+	status_estacionamento BINARY NOT NULL 
 );
 
 CREATE TABLE valor_estacionamento(
@@ -27,7 +28,6 @@ CREATE TABLE funcionario(
 	nome_funcionario VARCHAR(255) NOT NULL,
     foto IMAGE,
 	email VARCHAR(255) UNIQUE NOT NULL,
-	rg CHAR(9) UNIQUE NOT NULL,
 	cpf CHAR(11) UNIQUE NOT NULL,
 	senha VARCHAR(255) NOT NULL,
 	telefone CHAR(11) UNIQUE NULL,
