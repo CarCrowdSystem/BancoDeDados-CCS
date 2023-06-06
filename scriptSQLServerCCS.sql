@@ -30,7 +30,6 @@ CREATE TABLE funcionario(
 	email VARCHAR(255) UNIQUE NOT NULL,
 	cpf CHAR(11) UNIQUE NOT NULL,
 	senha VARCHAR(255) NOT NULL,
-	telefone CHAR(11) UNIQUE NULL,
 	login_habilitado BINARY(1) NOT NULL,
 	usuario_adm BINARY(1) NOT NULL
 );
